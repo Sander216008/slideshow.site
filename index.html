@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slideshow Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Slideshow Generator</h1>
+
+  <div class="form">
+    <label>Afbeeldingen:
+      <input type="file" id="images" multiple accept="image/*">
+    </label>
+
+    <label>Muziek (optioneel):
+      <input type="file" id="audio" accept="audio/*">
+    </label>
+
+    <label>Achtergrondkleur:
+      <input type="color" id="background" value="#000000">
+    </label>
+
+    <label>Aantal foto's per dia:
+      <input type="number" id="photosPerSlide" min="1" value="1">
+    </label>
+
+    <label>Duur van dia (seconden):
+      <input type="number" id="slideDuration" min="1" value="3">
+    </label>
+
+    <label>Duur van overgang (seconden):
+      <input type="number" id="transitionDuration" min="0" value="1">
+    </label>
+
+    <button id="startBtn">Start Voorbeeld</button>
+    <button id="exportBtn">Exporteer als MP4</button>
+  </div>
+
+  <div class="preview">
+    <video id="preview" controls></video>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.10.1/dist/ffmpeg.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
